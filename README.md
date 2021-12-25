@@ -1,5 +1,6 @@
-# online-courses
-A repo containing all code for all online courses. To be used mostly as a reference and/or workbench
+# Online Courses Workbench
+A repo containing all code for online courses. Mostly to be used as a reference and/or workbench (as I keep switching workspaces and laptops)
+
 
 ## Courses Links
 - [Vue Mastery](https://vuemastery.com)
