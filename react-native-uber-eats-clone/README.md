@@ -13,6 +13,8 @@ create an `.env` file with these costants
 ```bash
 YELP_API_KEY=
 
+GOOGLE_PLACES_API_KEY=
+
 FIREBASE_API_KEY=
 FIREBASE_AUTH_DOMAIN=
 FIREBASE_PROJECT_ID=

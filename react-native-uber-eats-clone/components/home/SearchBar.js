@@ -3,12 +3,14 @@ import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
+const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY
+
 function HeaderTabs({ cityHandler }) {
   return (
     <View style={styles.container}>
       <GooglePlacesAutocomplete
         query={{
-          key: "AIzaSyDAMtX-hCPhp0DrzVOPEsr2x341xBRKVIU",
+          key: GOOGLE_PLACES_API_KEY,
           language: "en",
         }}
         onPress={(data, details = null) => {
