@@ -1,5 +1,5 @@
-# React Native Uber Clone
-An uber Eats clone based on react native
+# React Native Uber Eats Clone
+An Uber Eats clone based on react native
 
 ## Link
 [https://www.youtube.com/watch?v=jmvbhuJXFow](https://www.youtube.com/watch?v=jmvbhuJXFow)
@@ -33,7 +33,7 @@ Build apk with Expo EAS
 eas build -p android --profile local
 ```
 
-Build for Google/Play Store
+Build for Google Play /Apple Store
 ```bash
 # android
 eas build -p android
