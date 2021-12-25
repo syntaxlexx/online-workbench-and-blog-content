@@ -9,6 +9,7 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 ## Courses Links
 - [Vue Mastery](https://vuemastery.com)
 - [Code With Mosh](https://codewithmosh.com)
+- [YouTube](https://www.youtube.com)
 
 ## E.T.C
 - [Mail me](mailto:lexxyungcarter@gmail.com)
