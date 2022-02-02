@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet } from "react-native";
-import Screen from "../components/Screen";
+import React, { useEffect } from "react";
+import { FlatList, StyleSheet, View } from "react-native";
 import AppCard from "../components/AppCard";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
@@ -9,6 +8,7 @@ import AppButton from "../components/AppButton";
 import ActivityIndicator from "../components/ActivityIndicator";
 import useApi from "../hooks/useApi";
 import listingsApi from "../api/listings";
+import AppScreen from "../components/AppScreen";
 
 function ListingsScreen({ navigation }) {
   const {
@@ -23,7 +23,7 @@ function ListingsScreen({ navigation }) {
   }, []);
 
   return (
-    <Screen style={styles.screen}>
+    <AppScreen>
       {error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
@@ -48,12 +48,12 @@ function ListingsScreen({ navigation }) {
           />
         )}
       ></FlatList>
-    </Screen>
+    </AppScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     paddingHorizontal: 5,
     backgroundColor: colors.light,
   },

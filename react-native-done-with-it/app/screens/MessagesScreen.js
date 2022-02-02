@@ -5,7 +5,6 @@ import Icon from "../components/Icon";
 import ListItem from "../components/ListItem";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import ListItemSeparator from "../components/ListItemSeparator";
-import Screen from "../components/Screen";
 
 const initialMessages = [
   {
@@ -39,7 +38,7 @@ function MessagesScreen(props) {
   };
 
   return (
-    <Screen>
+    <>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}
@@ -59,7 +58,7 @@ function MessagesScreen(props) {
         refreshing={refreshing}
         onRefresh={() => setMessages([...initialMessages])}
       ></FlatList>
-    </Screen>
+    </>
   );
 }
 

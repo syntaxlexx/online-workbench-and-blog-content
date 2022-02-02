@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import listingsApi from "../api/listings";
@@ -11,9 +11,10 @@ import {
   SubmitButton,
 } from "../components/forms";
 import FormImagePicker from "../components/forms/FormImagePicker";
-import Screen from "../components/Screen";
 import useLocation from "../hooks/useLocation";
 import UploadScreen from "./UploadScreen";
+import AppScreen from "../components/AppScreen";
+import colors from "../config/colors";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -65,7 +66,7 @@ function ListingEditScreen(props) {
   };
 
   return (
-    <Screen style={styles.container}>
+    <AppScreen style={styles.container}>
       <UploadScreen
         progress={progress}
         visible={uploadVisible}
@@ -109,13 +110,14 @@ function ListingEditScreen(props) {
 
         <SubmitButton title="Post" />
       </AppForm>
-    </Screen>
+    </AppScreen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
+    backgroundColor: colors.white,
   },
 });
 
