@@ -10,10 +10,24 @@ import AppLoading from "expo-app-loading";
 import { navigationRef } from "./app/navigation/rootNavigation";
 
 // logging
-// import logger from './app/utility/logger'
-// logger.start()
+import logger from "./app/utility/logger";
+logger.start();
 
-export default function App() {
+import Bugsnag from "@bugsnag/expo";
+const ErrorBoundary = Bugsnag.getPlugin("react").createErrorBoundary(React);
+
+const ErrorView = () => (
+  <div>
+    <p>Inform users of an error in the component tree.</p>
+  </div>
+);
+
+const onError = (event) => {
+  // callback will only run for errors caught by boundary
+  console.log("error captured", event);
+};
+
+const App = () => {
   const [user, setUser] = useState();
   const [isReady, setIsReady] = useState(false);
 
@@ -40,4 +54,10 @@ export default function App() {
       </NavigationContainer>
     </AuthContext.Provider>
   );
-}
+};
+
+export default () => (
+  <ErrorBoundary FallbackComponent={ErrorView} onError={onError}>
+    <App />
+  </ErrorBoundary>
+);

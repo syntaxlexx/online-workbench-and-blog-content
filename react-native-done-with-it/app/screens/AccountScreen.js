@@ -8,6 +8,7 @@ import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import colors from "../config/colors";
 import useAuth from "../auth/useAuth";
+import logger from "../utility/logger";
 
 const menuITems = [
   {

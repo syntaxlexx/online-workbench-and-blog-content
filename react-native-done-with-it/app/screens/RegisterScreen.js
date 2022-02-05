@@ -14,6 +14,7 @@ import {
   SubmitButton,
 } from "../components/forms";
 import useApi from "../hooks/useApi";
+import logger from "../utility/logger";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().min(4).label("Name"),
@@ -36,7 +37,7 @@ function RegisterScreen(props) {
       if (result.data) setError(result.data.error);
       else {
         setError("An unexpected error occurred.");
-        console.log(result);
+        logger.log(result);
       }
       return;
     }

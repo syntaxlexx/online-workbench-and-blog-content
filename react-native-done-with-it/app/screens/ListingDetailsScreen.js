@@ -22,7 +22,7 @@ function ListingDetailsScreen({ route }) {
 
         <View style={styles.userContainer}>
           <ListItem
-            image={listing.images[0].url}
+            image={{ uri: listing.images[0].url }}
             title="Mosh Haha"
             subTitle="5 Listings"
           ></ListItem>

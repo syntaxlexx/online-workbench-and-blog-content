@@ -3,6 +3,7 @@ import * as Notifications from "expo-notifications";
 
 import expoPushTokensApi from "../api/expoPushTokens";
 import { Platform } from "react-native";
+import logger from "../utility/logger";
 
 const useNotifications = (notificationListenerFn, responseListenerFn) => {
   const notificationListener = useRef();
@@ -53,7 +54,8 @@ const useNotifications = (notificationListenerFn, responseListenerFn) => {
         });
       }
     } catch (error) {
-      console.log("error getting push token", error);
+      console.log("error getting push token");
+      logger.log(error);
     }
   };
 };
