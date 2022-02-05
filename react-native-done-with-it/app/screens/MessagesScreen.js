@@ -11,13 +11,13 @@ const initialMessages = [
     id: 1,
     title: "T1",
     description: "D1",
-    image: require("../assets/jacket.jpg"),
+    image: require("../assets/icon.png"),
   },
   {
     id: 2,
     title: "T2",
     description: "D2",
-    image: require("../assets/jacket.jpg"),
+    image: require("../assets/icon.png"),
   },
   {
     id: 3,

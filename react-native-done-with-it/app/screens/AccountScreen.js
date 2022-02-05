@@ -57,7 +57,7 @@ function AccountScreen({ navigation }) {
         <ListItem
           title={user.name}
           subTitle={user.email}
-          image={require("../assets/jacket.jpg")}
+          image={require("../assets/logo.png")}
         ></ListItem>
       </View>
       <View style={styles.container}>
@@ -85,6 +85,14 @@ function AccountScreen({ navigation }) {
           title="Notify Me"
           IconComponent={<Icon name="alert" backgroundColor="blue" />}
           onPress={() => showNotification()}
+        />
+      </View>
+
+      <View style={styles.single}>
+        <ListItem
+          title="Contact Messages"
+          IconComponent={<Icon name="message" backgroundColor="green" />}
+          onPress={() => navigation.navigate("ContactMessages")}
         />
       </View>
 
