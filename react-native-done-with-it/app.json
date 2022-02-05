@@ -26,6 +26,9 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "Demo App - Learning React Native"
+    "description": "Demo App - Learning React Native",
+    "notification": {
+      "iosDisplayInForeground": true
+    }
   }
 }

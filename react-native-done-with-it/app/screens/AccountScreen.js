@@ -1,5 +1,7 @@
 import React from "react";
 import { StyleSheet, View, FlatList } from "react-native";
+import * as Notifications from "expo-notifications";
+
 import AppScreen from "../components/AppScreen";
 import Icon from "../components/Icon";
 import ListItem from "../components/ListItem";
@@ -27,6 +29,27 @@ const menuITems = [
 
 function AccountScreen({ navigation }) {
   const { user, logout } = useAuth();
+
+  const showNotification = () => {
+    Notifications.scheduleNotificationAsync({
+      content: {
+        title: "Congratulations!",
+        body: "You order was successfully placed!",
+      },
+      trigger: null,
+    });
+
+    Notifications.scheduleNotificationAsync({
+      content: {
+        title: "Future!",
+        body: "Manenos!",
+      },
+      trigger: {
+        seconds: 10,
+        repeats: false,
+      },
+    });
+  };
 
   return (
     <AppScreen style={styles.screen}>
@@ -56,6 +79,15 @@ function AccountScreen({ navigation }) {
           ItemSeparatorComponent={ListItemSeparator}
         ></FlatList>
       </View>
+
+      <View style={styles.single}>
+        <ListItem
+          title="Notify Me"
+          IconComponent={<Icon name="alert" backgroundColor="blue" />}
+          onPress={() => showNotification()}
+        />
+      </View>
+
       <ListItem
         title="Logout"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
@@ -69,6 +101,9 @@ const styles = StyleSheet.create({
   screen: {},
   container: {
     marginVertical: 20,
+  },
+  single: {
+    marginBottom: 20,
   },
 });
 
