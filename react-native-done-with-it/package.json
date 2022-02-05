@@ -39,7 +39,8 @@
     "react-native-web": "0.17.1",
     "yup": "^0.32.11",
     "expo-secure-store": "~11.0.3",
-    "expo-app-loading": "~1.2.1"
+    "expo-app-loading": "~1.2.1",
+    "expo-notifications": "~0.13.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
