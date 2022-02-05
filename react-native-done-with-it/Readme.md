@@ -19,3 +19,10 @@ npx expo-optimize
 ```
 
 ### Optimizing JavaScript
+
+How you import a package matters
+
+## Error Reporting Tools
+
+- Bugsnag - better, but pricier
+- Sentry
