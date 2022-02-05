@@ -17,17 +17,20 @@
     "@react-navigation/native": "^6.0.7",
     "@react-navigation/native-stack": "^6.3.0",
     "apisauce": "^2.1.5",
+    "dayjs": "^1.10.7",
     "expo": "~43.0.2",
+    "expo-app-loading": "~1.2.1",
     "expo-blur": "~10.0.3",
     "expo-constants": "^13.0.0",
     "expo-image-picker": "~11.0.3",
     "expo-location": "~13.0.4",
+    "expo-notifications": "~0.13.3",
     "expo-permissions": "~13.0.3",
+    "expo-secure-store": "~11.0.3",
     "expo-status-bar": "~1.1.0",
     "formik": "^2.2.9",
     "jwt-decode": "^3.1.2",
     "lottie-react-native": "4.0.3",
-    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "17.0.1",
     "react-native": "^0.64.3",
@@ -37,10 +40,7 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
     "react-native-web": "0.17.1",
-    "yup": "^0.32.11",
-    "expo-secure-store": "~11.0.3",
-    "expo-app-loading": "~1.2.1",
-    "expo-notifications": "~0.13.3"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
