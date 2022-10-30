@@ -21,8 +21,8 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 
 ## E.T.C
 - [Mail me](mailto:lexxyungcarter@gmail.com)
-- [Org](https://acelords.space)
-- [Org Mail](mailto:lexx@acelords.space)
+- [Org](https://acelords.com)
+- [Org Mail](mailto:info@acelords.com)
 
 ## License
 MIT
