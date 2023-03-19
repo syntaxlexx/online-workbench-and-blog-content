@@ -2,9 +2,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ![Screenshot 0](public/screenshot-0.png)
+
 ![Screenshot 1](public/screenshot-1.jpg)
+
 ![Screenshot 2](public/screenshot-2.png)
+
 ![Screenshot 3](public/screenshot-3.png)
+
 ![Screenshot 4](public/screenshot-4.png)
 
 ## Getting Started

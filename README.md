@@ -37,3 +37,5 @@ Use it however you may please!
 ## Screenshots
 ![Screenshot Similarity-openai](next13-similarity-openai-yt/public/screenshot-0.png)
 
+![Screenshot Typing Game](vanilla-js-typing-game/screenshot-2.png)
+
