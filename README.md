@@ -11,13 +11,17 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 - React v17, v18
 
 ## Backend Techs/Solutions
-- Nextjs
-- Nhost
-- Upstash
-- Hasura
-- Planetscale
-- AppWrite
-- OpenAI
+- [Next.js](https://nextjs.org)
+- [NextAuth.js](https://next-auth.js.org)
+- [Prisma](https://prisma.io)
+- [Tailwind CSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
+- [Nhost](https://nhost.io/)
+- [Upstash](https://upstash.com/)
+- [Hasura](https://hasura.io/)
+- [Planetscale](https://planetscale.com/)
+- [AppWrite](https://appwrite.io/)
+- [OpenAI](https://platform.openai.com/account/api-keys)
 
 ## Courses Links
 - [Vue Mastery](https://vuemastery.com)
