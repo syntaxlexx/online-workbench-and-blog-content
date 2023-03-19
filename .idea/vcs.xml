@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/next13-similarity-openai-yt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nextjs-tRPC-notetaker" vcs="Git" />
   </component>
 </project>
