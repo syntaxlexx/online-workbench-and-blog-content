@@ -40,6 +40,8 @@ MIT
 Use it however you may please!
 
 ## Screenshots
+![Video](sveltekit-realtime-chat-socketio/sveltekit-realtime-chat.gif)
+
 ![Screenshot Similarity-openai](next13-similarity-openai-yt/public/screenshot-0.png)
 
 ![Screenshot Twitch chat](react-twitch-chat-socketio/screenshot-1.png)
