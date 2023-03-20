@@ -3,12 +3,13 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 
 ### Links
 1. [ Screenshots. ](#screenshots)
-2. [ Courses Links. ](#courses-links)
+2. [ Courses' Links. ](#courses-links)
 
 ## Programming Languages/Libraries/Frameworks
-- Vue (2,3)
-- React Native (w/ Expo)
-- React v17, v18
+- [Vue](https://vuejs.org/)
+- [React Native (w/ Expo)](https://expo.dev/)
+- [React](https://reactjs.org/)
+- [Sveltekit](https://kit.svelte.dev/)
 
 ## Backend Techs/Solutions
 - [Next.js](https://nextjs.org)
@@ -23,7 +24,7 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 - [AppWrite](https://appwrite.io/)
 - [OpenAI](https://platform.openai.com/account/api-keys)
 
-## Courses Links
+## Courses' Links
 - [Vue Mastery](https://vuemastery.com)
 - [Code With Mosh](https://codewithmosh.com)
 - [YouTube](https://www.youtube.com)
