@@ -18,10 +18,9 @@ module.exports = (app: Express) => {
 	io.on('connection', socket => {
 		const id = socket.id;
 		console.log('A user connected: ', id);
-		io.emit(EVENTS.onlineUsers, users.size);
-
 		const user = users.get(id) ?? generateUser();
 		users.set(id, user);
+		io.emit(EVENTS.onlineUsers, users.size);
 
 		socket.on('disconnect', () => {
 			console.log('user disconnected: ', id);

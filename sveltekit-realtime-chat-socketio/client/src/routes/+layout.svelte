@@ -1,24 +1,50 @@
 <script lang='ts'>
-	// The ordering of these imports is critical to your app working properly
 	import '@skeletonlabs/skeleton/themes/theme-modern.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
 	import '@skeletonlabs/skeleton/styles/all.css';
-	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
+
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import Navbar from '$lib/components/Navbar.svelte';
-	import { onMount } from 'svelte';
-	import { ioSocket } from '$lib/stores/socketStore';
+	import { onDestroy, onMount } from 'svelte';
+	import { ioSocket, isIoSocketConnected, connectedUsers } from '$lib/stores/socketStore';
 	import { authUser } from '$lib/stores/authStore';
-	import { io } from '$lib/socket-client';
+	import socket from '$lib/socket';
+	import { SOCKET_EVENTS } from '../lib/contants';
 
 	export let data;
-	const authToken: string | undefined = data?.accessToken;
+	// const authToken: string | undefined = data?.accessToken;
+
+	function handleOnConnect() {
+		// console.log('connected');
+		isIoSocketConnected.update(() => true)
+	}
+	function handleOnDisconnect() {
+		// console.log('disconnected');
+		isIoSocketConnected.update(() => false)
+		connectedUsers.update((prev) => prev - 1)
+	}
 
 	onMount(() => {
-		ioSocket.update(() => io);
+		socket.on(SOCKET_EVENTS.connect, handleOnConnect)
+		socket.on(SOCKET_EVENTS.disconnect, handleOnDisconnect)
+
+		ioSocket.update(() => socket);
 		authUser.update(() => data.user);
+
+		// feed initial socket connection state
+		if(socket.connected) {
+			handleOnConnect()
+		} else {
+			handleOnDisconnect()
+		}
 	});
+
+	onDestroy(() => {
+		socket.off()
+		// socket.disconnect()
+		ioSocket.update(() => null);
+		isIoSocketConnected.update(() => false);
+	})
 </script>
 
 <AppShell>

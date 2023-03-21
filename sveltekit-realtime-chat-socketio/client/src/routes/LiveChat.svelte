@@ -1,8 +1,8 @@
 <script lang='ts'>
-	import { ioSocket } from '$lib/stores/socketStore';
+	import { ioSocket, connectedUsers } from '$lib/stores/socketStore';
 	import { authUser } from '$lib/stores/authStore';
-	import { onMount } from 'svelte';
-	import { EVENTS } from '$lib/socket-client';
+	import { SOCKET_EVENTS } from '$lib/contants';
+	import { onDestroy, onMount } from 'svelte';
 	import type { SocketMessagePayload } from '$lib/types';
 	import { getTimeFromDate } from '$lib/helpers.js';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
@@ -10,20 +10,14 @@
 	import ComposeMessage from './ComposeMessage.svelte';
 	import ChatPausedAlert from './ChatPausedAlert.svelte';
 
-	$: io = $ioSocket;
+	$: socket = $ioSocket;
 	$: user = $authUser;
 
-	let onlineUsers = 0;
 	let messages: SocketMessagePayload[] = [];
 	let hideTimestamps = false;
 	let isScrollPaused = false;
 	let element;
 	let prevScrollY = 0;
-
-	onMount(() => {
-		socketListener();
-		io?.emit(EVENTS.onlineUsers);
-	});
 
 	const scrollToBottom = async (node: HTMLUListElement) => {
 		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
@@ -48,15 +42,19 @@
 		isScrollPaused = false
 	}
 
-	function socketListener() {
-		io?.on(EVENTS.onlineUsers, (data: number) => {
-			onlineUsers = data;
-		});
+	function updateOnlineUsers(data: number) {
+		connectedUsers.update(() => data)
+	}
 
-		io?.on(EVENTS.newMessage, (data: SocketMessagePayload) => {
-			console.log(data);
-			messages = [...messages, data];
-		});
+	function handleIncomingMessage(data: SocketMessagePayload) {
+		// console.log(data);
+		messages = [...messages, data];
+	}
+
+	function socketListener() {
+		socket?.on(SOCKET_EVENTS.onlineUsers, updateOnlineUsers);
+
+		socket?.on(SOCKET_EVENTS.newMessage, handleIncomingMessage);
 	}
 
 	function sendMessage(e: CustomEvent) {
@@ -75,13 +73,24 @@
 				createdAt: new Date()
 			};
 
-			io?.emit(EVENTS.message, payload);
+			socket?.emit(SOCKET_EVENTS.message, payload);
 		}
 	}
 
+
+	onMount(() => {
+		socketListener();
+		socket?.emit(SOCKET_EVENTS.onlineUsers);
+	});
+
+	onDestroy(() => {
+		socket?.off(SOCKET_EVENTS.onlineUsers, updateOnlineUsers)
+		socket?.off(SOCKET_EVENTS.newMessage, handleIncomingMessage)
+	})
+
 </script>
 
-<p>Users online: {onlineUsers}</p>
+<p>Users online: {$connectedUsers}</p>
 <br />
 
 <div class='flex flex-wrap'>
