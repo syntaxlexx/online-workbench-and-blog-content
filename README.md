@@ -23,6 +23,7 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 - [Planetscale](https://planetscale.com/)
 - [AppWrite](https://appwrite.io/)
 - [OpenAI](https://platform.openai.com/account/api-keys)
+- [Astro](https://astro.build/)
 
 ## Courses' Links
 - [Vue Mastery](https://vuemastery.com)
@@ -47,4 +48,6 @@ Use it however you may please!
 ![Screenshot Twitch chat](react-twitch-chat-socketio/screenshot-1.png)
 
 ![Screenshot Typing Game](vanilla-js-typing-game/screenshot-2.png)
+
+![Screenshot Google Places](next13-google-places-food-restaurant/public/screenshot.png)
 
