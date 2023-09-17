@@ -31,7 +31,7 @@ A repo containing all code for online courses. Mostly to be used as a reference 
 - [YouTube](https://www.youtube.com)
 
 ## E.T.C
-- [Mail me](mailto:lexxyungcarter@gmail.com)
+- [Mail me](mailto:syntaxlexx@gmail.com)
 - [Org](https://acelords.com)
 - [Org Mail](mailto:info@acelords.com)
 
