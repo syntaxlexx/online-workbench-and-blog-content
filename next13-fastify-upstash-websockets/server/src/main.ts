@@ -117,6 +117,14 @@ async function buildServer() {
         }
     })
 
+    app.get('/', () => {
+        return {
+            status: 'ok',
+            port: PORT,
+            message: "Backend Server Running! Fastify go brrrrrrr"
+        }
+    })
+    
     app.get('/healthcheck', () => {
         return {
             status: 'ok',
